@@ -13,5 +13,6 @@ setup(
         "opencv-python",
         "line_profiler",
         "memory_profiler",
+        "gprof2dot",
     ],
 )
