@@ -1,6 +1,6 @@
 import click
 
-import profiling_demos.demo_1.api_simulator
+from profiling_demos.demo_1 import api_simulator
 from profiling_demos.demo_1.image_utils import (
     get_masked_fraction,
     remove_edge,
