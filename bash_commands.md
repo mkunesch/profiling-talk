@@ -51,7 +51,7 @@ process
 ```
 # Run the video classifier in the background
 # Here VIDEO_NAME.mp4 has to be replaced the path to some mp4 video.
-python classify_video.py VIDEO_NAME.mp4 &
+python classify_videos.py VIDEO_NAME.mp4 &
 
 # Now attach pyflame to the process and profile for 5 seconds
 # PROCESS_ID has to be replaced by the ID (found using htop)
@@ -69,10 +69,10 @@ terrible implementation (e.g. by replacing it with `remove_edge_fast`), the
 code is much faster and can be profiled directly with `pyflame` or `cProfile`:
 
 ```
-pyflame -t python classify_video.py VIDEO_NAME.mp4 > pyflame_profile1
+pyflame -t python classify_videos.py VIDEO_NAME.mp4 > pyflame_profile1
 PATH_TO_FLAMEGRAPH/flamegraph.pl pyflame_profile1 > pyflame_profile1.svg
 
-python -m cProfile -o cprofile classify_video.py VIDEO_NAME.mp4
+python -m cProfile -o cprofile classify_videos.py VIDEO_NAME.mp4
 gprof2dot -f pstats cprofile | dot -Tpng -Gdpi=200 cprofile.png
 ```
 
